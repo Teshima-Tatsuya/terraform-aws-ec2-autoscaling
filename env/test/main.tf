@@ -17,10 +17,6 @@ module "vpc" {
   sg_rule      = var.sg_rule
 }
 
-module "kms" {
-  source = "../../modules/kms"
-}
-
 module "iam" {
   source = "../../modules/iam"
 }
