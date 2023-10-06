@@ -25,5 +25,4 @@ module "elb" {
   source = "../../modules/elb"
 
   vpc = module.vpc.vpc
-  acm = module.acm.acm
 }
