@@ -4,7 +4,7 @@ resource "aws_launch_template" "web" {
 
   image_id      = data.aws_ssm_parameter.amzn2_ami.value
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.teshima-AmazonLinux2.key_name
+  key_name      = data.aws_key_pair.teshima-keypair.key_name
   iam_instance_profile {
     name = var.iam.profile.name
   }
