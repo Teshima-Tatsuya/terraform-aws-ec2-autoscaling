@@ -1,7 +1,3 @@
-data "aws_s3_bucket" "main" {
-    bucket = "teshima-tokyo-bucket"
-}
-
 resource "aws_lb" "alb" {
     name = "teshima-alb"
     internal = false
