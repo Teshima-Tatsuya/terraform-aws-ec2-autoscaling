@@ -30,4 +30,5 @@ module "elb" {
 
   vpc = module.vpc.vpc
   route53 = module.domain.route53
+  acm = module.domain.acm
 }

@@ -1,6 +1,6 @@
 output "acm" {
   value = {
-    acm = aws_acm_certificate.dev
+    certificate = aws_acm_certificate.dev
   }
 }
 
