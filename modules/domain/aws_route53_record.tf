@@ -1,11 +1,16 @@
-# resource "aws_route53_record" "main" {
-#     zone_id = aws_route53_zone.dev.zone_id
-#     name = aws_route53_zone.dev.name
-#     type = "A"
+resource "aws_route53_record" "cert" {
+  for_each = {
+    for dvo in aws_acm_certificate.dev.domain_validation_options : dvo.domain_name => {
+      name   = dvo.resource_record_name
+      record = dvo.resource_record_value
+      type   = dvo.resource_record_type
+    }
+  }
 
-#     alias {
-#       name = var.elb.alb.dns_name
-#       zone_id = var.elb.alb.zone_id
-#       evaluate_target_health = true
-#     }
-# }
+  allow_overwrite = true
+  name = each.value.name
+  records = [each.value.record]
+  type = each.value.type
+  zone_id = aws_route53_zone.dev.zone_id
+  ttl = 60
+}
