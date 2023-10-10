@@ -10,16 +10,7 @@ resource "aws_launch_template" "web" {
   }
   vpc_security_group_ids = [var.vpc.sg.teshima-sg-web.id]
 
-  user_data = base64encode(<<-EOL
-      #!/bin/bash 
-
-      yum install httpd -y
-      systemctl start httpd
-      systemctl enable httpd
-
-      yum install amzon-cloudwatch-agent -y
-    EOL
-  )
+  user_data = base64encode(file("${path.module}/userdata.sh"))
 
   update_default_version = true
 
