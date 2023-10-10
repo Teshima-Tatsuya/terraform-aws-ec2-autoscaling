@@ -14,6 +14,9 @@ resource "aws_launch_template" "web" {
 
   update_default_version = true
 
+  monitoring {
+    enabled = true
+  }
   tag_specifications {
     resource_type = "instance"
     tags = {
