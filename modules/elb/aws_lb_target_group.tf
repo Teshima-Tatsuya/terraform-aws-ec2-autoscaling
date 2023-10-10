@@ -7,6 +7,8 @@ resource "aws_lb_target_group" "alb-http" {
 
     health_check {
       protocol = "HTTP"
-      port = 80
+      healthy_threshold = 2
+      interval = 5
+      timeout = 2
     }
 }
