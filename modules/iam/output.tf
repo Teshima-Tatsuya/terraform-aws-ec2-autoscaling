@@ -1,6 +1,6 @@
 output "iam" {
   value = {
-    "role" = aws_iam_role.teshima-ssm-access
-    "profile" = aws_iam_instance_profile.teshima-ssm-access
+    "role" = aws_iam_role.web-server
+    "profile" = aws_iam_instance_profile.web-server
   }
 }

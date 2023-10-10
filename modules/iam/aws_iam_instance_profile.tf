@@ -1,4 +1,4 @@
-resource "aws_iam_instance_profile" "teshima-ssm-access" {
-    name = "teshima-ssm-access"
-    role = aws_iam_role.teshima-ssm-access.name
+resource "aws_iam_instance_profile" "web-server" {
+    name = "web-server"
+    role = aws_iam_role.web-server.name
 }

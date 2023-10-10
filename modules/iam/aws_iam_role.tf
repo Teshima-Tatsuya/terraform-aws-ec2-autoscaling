@@ -1,5 +1,5 @@
-resource "aws_iam_role" "teshima-ssm-access" {
-  name               = "teshima-ssm-access"
+resource "aws_iam_role" "web-server" {
+  name               = "web-server"
   path               = "/"
-  assume_role_policy = data.aws_iam_policy_document.teshima-ssm-access.json
+  assume_role_policy = data.aws_iam_policy_document.web-server_assume_role_policy.json
 }
