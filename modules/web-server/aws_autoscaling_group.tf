@@ -15,4 +15,11 @@ resource "aws_autoscaling_group" "web" {
     id      = aws_launch_template.web.id
     version = "$Latest"
   }
+
+  lifecycle {
+    ignore_changes = [ 
+      desired_capacity,
+      min_size
+    ]
+  }
 }
