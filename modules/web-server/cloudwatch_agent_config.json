@@ -3,12 +3,8 @@
       "metrics_collection_interval": 10
     },
     "metrics": {
+      "namespace": "EC2",
       "metrics_collected": {
-        "disk": {
-          "resources": ["/", "/tmp"],
-          "measurement": ["disk_used_percent"],
-          "ignore_file_system_types": ["sysfs", "devtmpfs"]
-        },
         "mem": {
           "measurement": ["mem_available_percent"]
         }
