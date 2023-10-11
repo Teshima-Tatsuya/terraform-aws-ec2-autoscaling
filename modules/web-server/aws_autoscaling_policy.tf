@@ -1,5 +1,5 @@
 resource "aws_autoscaling_policy" "web-server_cpu_up" {
-  name                   = "web-server_cpu"
+  name                   = "web-server_cpu_up"
   scaling_adjustment     = 1
   adjustment_type        = "ChangeInCapacity"
   cooldown               = 150
@@ -7,7 +7,7 @@ resource "aws_autoscaling_policy" "web-server_cpu_up" {
 }
 
 resource "aws_autoscaling_policy" "web-server_cpu_down" {
-  name                   = "web-server_cpu"
+  name                   = "web-server_cpu_down"
   scaling_adjustment     = -1
   adjustment_type        = "ChangeInCapacity"
   cooldown               = 150
