@@ -1,6 +1,6 @@
 resource "aws_route53_record" "main" {
     zone_id = var.route53.zone.zone_id
-    name = var.route53.zone.name
+    name = "asg.${var.route53.zone.name}"
     type = "A"
 
     alias {
